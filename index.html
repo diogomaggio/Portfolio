@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Evita que margens e paddings ultrapassem a largura */
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #000000, #0e001d, #200041, #340036);
+            background-attachment: fixed; /* Mantém o fundo fixo */
+            color: white;
+        }
+        header {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Garante que o header fique acima dos outros elementos */
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+            width: 100%;
+            height: 100%;
+            transition: background 0.5s ease-in-out; /* Transição suave */
+        }
+        section h1,
+        section p {
+            text-align: left;
+            max-width: 80%; /* Para evitar que o texto fique muito largo em telas grandes */
+        }
+        #home { background: rgba(0, 0, 0, 0.2); }
+        #sobre { background: rgba(35, 0, 70, 0.2); }
+        #projetos { background: rgba(57, 2, 112, 0.2); }
+        #habilidades { background: rgba(106, 0, 112, 0.2); }
+        #habilidades h1{
+            align-items: center;
+            padding-left: 0;
+        }
+        html {
+            scroll-behavior: smooth; /* Efeito de rolagem suave */
+            overflow-y: scroll;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        p {
+            color: #f0f0f0;
+        }
+
+        .bnt_linkedin {
+            width: 190px;
+            height: 80px;
+            border-radius: 50px;
+            color: white;
+            background-color: #390270;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            position: relative;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .bnt_linkedin:hover {
+            background-color: white;
+            color: black;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .icones-animacao {
+            position: absolute;
+            right: 25%;
+            top: 30%;
+            width: 500px;
+            height: 500px;
+            transform: translateY(-50%);
+            animation: rotateIcons 15s linear infinite;
+        }
+
+        .icone {
+            position: absolute;
+            width: 150px; 
+            height: 150px;
+        }
+
+        .icone:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .icone:nth-child(2) { right: 0; top: 50%; transform: translateY(-50%); }
+        .icone:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .icone:nth-child(4) { left: 0; top: 50%; transform: translateY(-50%); }
+
+        @keyframes rotateIcons {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        #sobre {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-left: 10%;
+        }
+        #sobre p {
+            font-size: 20px;
+            line-height: 1.5;
+            max-width: 50%; /* Ocupa metade da largura */
+        }
+
+        .sobre-imagem {
+            max-width: 50%; /* Define um tamanho adequado */
+            max-height: 50%;
+            padding: 30px;
+            margin-right: 10%;
+            
+            /* Animação de flutuação */
+            animation: flutuar 3s ease-in-out infinite;
+        }
+
+        @keyframes flutuar {
+            0% { transform: translateY(0); }    /* Posição inicial */
+            50% { transform: translateY(-30px); } /* Sobe 10px */
+            100% { transform: translateY(0); }   /* Volta para a posição inicial */
+        }
+
+
+        #projetos {
+            text-align: center;
+        }
+
+        .projetos-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px; /* Aumenta o espaço entre os projetos */
+            flex-wrap: wrap; /* Garante responsividade */
+        }
+
+        .projeto {
+            text-align: center;
+            max-width: 300px; /* Limita a largura para evitar desalinhamento */
+        }
+
+        .projeto-titulo {
+            margin-bottom: 10px; /* Adiciona espaço entre o título e a descrição */
+            transition: color 0.3s;
+        }
+
+        .projeto-titulo:hover{
+            color: #71038d;
+        }
+
+        .detalhes-projeto {
+            text-align: center; /* Centraliza a descrição e o botão */
+            border: 2px solid white; /* Adiciona a borda branca */
+            padding: 15px; /* Espaçamento interno para melhor visualização */
+            border-radius: 10px; /* Deixa as bordas arredondadas */
+            display: inline-block; /* Mantém o tamanho adequado ao conteúdo */
+        }
+
+
+        .bnt_projeto {
+            width: 100px;
+            height: 50px;
+            border-radius: 50px;
+            color: white;
+            background-color: #390270;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            position: relative;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .bnt_projeto:hover {
+            background-color: white;
+            color: black;
+        }
+        .habilidades-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 200px;
+            align-items: center;
+            padding: 5%;
+            width: 90%;
+}
+        .icons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            justify-content: center;
+            margin-top: 50px;
+            padding: 0 10%;
+        }
+        .icon {
+            text-align: center;
+            position: relative;
+        }
+        .icon img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease-in-out;
+            object-fit: contain;
+        }
+        .icon:hover img {
+            transform: scale(1.2);
+        }
+        .icon::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: -10px;
+            left: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .icon:hover::before {
+            opacity: 1;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 0.5; }
+        }
+
+        .descricao {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 500px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .descricao {
+                width: 70%;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section id="home">
+        <h1>
+            Diogo Maggio de Azevedo
+        </h1>
+
+        <p>
+            Desenvolvedor Full-Stack | Criador de soluções | Apaixonado por código
+        </p>
+
+        <button class="bnt_linkedin" onclick="openLinkedIn()">Linkedin</button>
+
+        <div class="icones-animacao">
+            <img src="imgs/icon-javascript.png" alt="JavaScript" class="icone">
+            <img src="imgs/icon-html.png" alt="HTML" class="icone">
+            <img src="imgs/icon-css.png" alt="CSS" class="icone">
+            <img src="imgs/icon-react.png" alt="React" class="icone">
+        </div>
+        
+    </section>
+
+    <section id="sobre">
+        <div>
+            <h1>Sobre mim:</h1>
+            <p>
+                Sou um jovem universitário competente que já participou de diversos projetos acadêmicos e extracurriculares, já trabalhei como auxiliar administrativo. 
+                Tenho experiência com o pacote Office, SQL, desenvolvimento web usando JavaScript, HTML5 e CSS, além de plataformas no-code como Wix. 
+                Tenho também conhecimentos básicos em desenvolvimento back-end, em linguagens como Python, PHP e C#. 
+                Por fim, tenho conhecimentos básicos em desenvolvimento mobile usando Next.js e Android Studio. 
+                Procuro uma oportunidade de demonstrar meu potencial como desenvolvedor e contribuir em qualquer ambiente que me encontrar.
+            </p>
+        </div>
+        <img src="imgs/sua-imagem.png" alt="Minha foto" class="sobre-imagem">
+    </section>
+
+    <section id="projetos">
+        <h1>Projetos</h1>
+    
+        <div class="projetos-container">
+            <div class="projeto">
+                <h2 class="projeto-titulo">Cadastro JS</h2>
+                <div class="detalhes-projeto">
+                    <p>Projeto de login e cadastro utilizando HTML5, CSS e JavaScript.</p>
+                    <button class="bnt_projeto" onclick="openProjeto('cadastroJS')">Ver Projeto</button>
+                </div>
+            </div>
+    
+            <div class="projeto">
+                <h2 class="projeto-titulo">Calculadora Simples</h2>
+                <div class="detalhes-projeto">
+                    <p>Projeto de calculadora utilizando HTML5, CSS e JavaScript.</p>
+                    <button class="bnt_projeto" onclick="openProjeto('Calculadora')">Ver Projeto</button>
+                </div>
+            </div>
+
+            <div class="projeto">
+                <h2 class="projeto-titulo">Controle Financeiro</h2>
+                <div class="detalhes-projeto">
+                    <p>Projeto site/app de gestão financeira usando HTML5, CSS, Javasccript e React.</p>
+                    <button class="bnt_projeto" onclick="openProjeto('Financeiro')">Ver Projeto</button>
+                </div>
+            </div>
+        </div>
+    </section>
+      
+    <section id="habilidades">
+        <h1>Habilidades:</h1>
+        <div class="habilidades-container">
+            <div class="icons">
+                <div class="icon" onclick="showDescription('React', this)">
+                    <img src="imgs/icon-react.png" alt="React">
+                </div>
+                <div class="icon" onclick="showDescription('TypeScript', this)">
+                    <img src="imgs/icon-typescript.png" alt="TypeScript">
+                </div>
+                <div class="icon" onclick="showDescription('JavaScript', this)">
+                    <img src="imgs/icon-javascript.png" alt="JavaScript">
+                </div>
+                <div class="icon" onclick="showDescription('HTML', this)">
+                    <img src="imgs/icon-html.png" alt="HTML">
+                </div>
+                <div class="icon" onclick="showDescription('CSS', this)">
+                    <img src="imgs/icon-css.png" alt="CSS">
+                </div>
+                <div class="icon" onclick="showDescription('Next.js', this)">
+                    <img src="imgs/icon-next.png" alt="Next.js">
+                </div>
+                <div class="icon" onclick="showDescription('C#', this)">
+                    <img src="imgs/icon-Csharp.png" alt="C#">
+                </div>
+                <div class="icon" onclick="showDescription('PHP', this)">
+                    <img src="imgs/icon-php.png" alt="PHP">
+                </div>
+                <div class="icon" onclick="showDescription('Python', this)">
+                    <img src="imgs/icon-python.png" alt="Python">
+                </div>
+                <div class="icon" onclick="showDescription('Git', this)">
+                    <img src="imgs/icon-git.png" alt="Git">
+                </div>
+                <div class="icon" onclick="showDescription('Github', this)">
+                    <img src="imgs/icon-github.png" alt="Github">
+                </div>
+                <div class="icon" onclick="showDescription('Vite', this)">
+                    <img src="imgs/icon-vite.png" alt="Vite">
+                </div>
+            </div>
+            <div class="descricao">
+                <p id="descricao-texto">Clique em uma tecnologia para ver a descrição.</p>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
