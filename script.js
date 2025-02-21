@@ -38,6 +38,10 @@ function openLinkedIn() {
     window.open("https://www.linkedin.com/in/diogo-maggio-9b8195239/", "_blank");
 }
 
+function openGithub() {
+    window.open("https://github.com/diogomaggio", "_blank");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // Seleciona todos os elementos de detalhes dos projetos e os esconde
     document.querySelectorAll(".detalhes-projeto").forEach((detalhe) => {
