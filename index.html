@@ -85,6 +85,26 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
+
+        .bnt_github {
+            width: 190px;
+            height: 80px;
+            margin-top: 20px;
+            border-radius: 50px;
+            color: white;
+            background-color: #390270;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            position: relative;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .bnt_github:hover {
+            background-color: white;
+            color: black;
+        }
+        
         .bnt_linkedin:hover {
             background-color: white;
             color: black;
@@ -305,6 +325,8 @@
         </p>
 
         <button class="bnt_linkedin" onclick="openLinkedIn()">Linkedin</button>
+
+        <button class="bnt_github" onclick="openGithub()">Github</button>
 
         <div class="icones-animacao">
             <img src="imgs/icon-javascript.png" alt="JavaScript" class="icone">
