@@ -495,11 +495,10 @@ function App() {
               Habilidades & stack
             </Chip>
             <h2 className="max-w-3xl text-3xl font-bold text-white md:text-5xl">
-              A roda de tecnologias continua aqui, agora com uma estética mais refinada.
+              Tecnologias variadas as quais possuo conhecimento/experiência
             </h2>
             <p className="max-w-3xl text-base leading-8 text-white/67 md:text-lg">
-              Mantive a ideia central da sua roda de tecnologias, mas reinterpretei com glow, vidro,
-              profundidade e seleção ativa para tornar a seção mais viva e mais atual.
+              Quando se trata de linguagens, acredito que mesmo sem um profundo conhecimento, quando se entende a lógica por trás delas, é possível aprender rapidamente e se adaptar a novas experiências.
             </p>
 
             <div className="skill-shell relative flex min-h-144 items-center justify-center overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-6">
