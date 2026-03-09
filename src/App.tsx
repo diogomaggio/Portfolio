@@ -411,8 +411,7 @@ function App() {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/65 md:text-lg">
-              Mantive seus projetos publicados, mas com uma apresentação mais sofisticada: cards mais
-              limpos, chips de stack, hierarquia visual melhor e CTAs com mais presença.
+              Alguns projetos os quais já dediquei algum tempo, consolidando e melhorando cada vez mais minhas habilidades e conhecimentos.
             </p>
           </div>
 
