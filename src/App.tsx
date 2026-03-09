@@ -7,7 +7,6 @@ import {
   Github,
   GraduationCap,
   Layers3,
-  Linkedin,
   LinkedinIcon,
 } from "lucide-react";
 
@@ -266,7 +265,7 @@ function App() {
                 size="lg"
                 radius="full"
                 color="secondary"
-                endContent={<Linkedin size={18} />}
+                endContent={<LinkedinIcon size={18} />}
                 className="bg-violet-500 font-semibold text-white shadow-lg shadow-violet-500/30"
               >
                 LinkedIn
