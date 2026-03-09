@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Button, Card, CardBody, Chip } from "@heroui/react";
 import { motion } from "framer-motion";
 import {
@@ -196,12 +196,42 @@ const sectionAnimation = {
 };
 
 function App() {
-  const [selectedTech, setSelectedTech] = useState<Technology>(technologies[0]);
+  const [selectedTech, setSelectedTech] = useState<Technology | null>(technologies[0]);
+  const techCardRef = useRef<HTMLDivElement | null>(null);
 
   const selectedIndex = useMemo(
-    () => technologies.findIndex((technology) => technology.name === selectedTech.name),
+    () =>
+      selectedTech
+        ? technologies.findIndex((technology) => technology.name === selectedTech.name)
+        : -1,
     [selectedTech],
   );
+
+  useEffect(() => {
+    function handlePointerDown(event: MouseEvent) {
+      const target = event.target as HTMLElement | null;
+
+      if (!target || !selectedTech) {
+        return;
+      }
+
+      if (target.closest("[data-tech-trigger='true']")) {
+        return;
+      }
+
+      if (techCardRef.current?.contains(target)) {
+        return;
+      }
+
+      setSelectedTech(null);
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+    };
+  }, [selectedTech]);
 
   return (
     <div className="relative overflow-hidden bg-slate-950 text-slate-50">
@@ -483,12 +513,13 @@ function App() {
                     "--angle": `${index * (360 / technologies.length)}deg`,
                   } as CSSProperties;
 
-                  const isActive = selectedTech.name === technology.name;
+                  const isActive = selectedTech?.name === technology.name;
 
                   return (
                     <div key={technology.name} className="skill-node" style={orbitStyle}>
                       <button
                         type="button"
+                        data-tech-trigger="true"
                         onClick={() => setSelectedTech(technology)}
                         className={`skill-node-button ${
                           isActive
@@ -505,28 +536,31 @@ function App() {
                 })}
               </div>
 
-              <motion.div
-                key={selectedTech.name}
-                initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.28 }}
-                className="relative z-10 max-w-sm rounded-4xl border border-white/10 bg-slate-950/80 p-6 text-center shadow-[0_20px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl"
-              >
-                <div className="mx-auto flex size-16 items-center justify-center rounded-2xl border border-white/10 bg-white/7">
-                  <img src={selectedTech.icon} alt={selectedTech.name} className="h-10 w-10 object-contain" />
-                </div>
-                <div className="mt-4 space-y-3">
-                  <p className="text-xs uppercase tracking-[0.28em] text-white/40">
-                    tecnologia {selectedIndex + 1}
-                  </p>
-                  <h3 className="text-3xl font-bold text-white">{selectedTech.name}</h3>
-                  <p className="text-base font-medium text-violet-200">{selectedTech.summary}</p>
-                  <p className="text-sm leading-7 text-white/65">{selectedTech.details}</p>
-                  <Chip className="border border-violet-400/20 bg-violet-500/10 text-violet-100" radius="full">
-                    foco: {selectedTech.focus}
-                  </Chip>
-                </div>
-              </motion.div>
+              {selectedTech ? (
+                <motion.div
+                  key={selectedTech.name}
+                  ref={techCardRef}
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.28 }}
+                  className="relative z-10 max-w-sm rounded-4xl border border-white/10 bg-slate-950/80 p-6 text-center shadow-[0_20px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl"
+                >
+                  <div className="mx-auto flex size-16 items-center justify-center rounded-2xl border border-white/10 bg-white/7">
+                    <img src={selectedTech.icon} alt={selectedTech.name} className="h-10 w-10 object-contain" />
+                  </div>
+                  <div className="mt-4 space-y-3">
+                    <p className="text-xs uppercase tracking-[0.28em] text-white/40">
+                      tecnologia {selectedIndex + 1}
+                    </p>
+                    <h3 className="text-3xl font-bold text-white">{selectedTech.name}</h3>
+                    <p className="text-base font-medium text-violet-200">{selectedTech.summary}</p>
+                    <p className="text-sm leading-7 text-white/65">{selectedTech.details}</p>
+                    <Chip className="border border-violet-400/20 bg-violet-500/10 text-violet-100" radius="full">
+                      foco: {selectedTech.focus}
+                    </Chip>
+                  </div>
+                </motion.div>
+              ) : null}
             </div>
           </div>
 
