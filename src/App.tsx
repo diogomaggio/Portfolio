@@ -8,6 +8,8 @@ import {
   GraduationCap,
   Layers3,
   LinkedinIcon,
+  Mail,
+  Phone,
 } from "lucide-react";
 
 import photo from "../imgs/sua-imagem.png";
@@ -584,6 +586,28 @@ function App() {
               <div className="relative z-10 flex flex-wrap gap-4">
                 <Button
                   as="a"
+                  href="mailto:diogomaggio@gmail.com"
+                  size="lg"
+                  radius="full"
+                  color="secondary"
+                  startContent={<Mail size={18} />}
+                  className="bg-cyan-500 font-semibold text-slate-950"
+                >
+                  E-mail
+                </Button>
+                <Button
+                  as="a"
+                  href="tel:+5534988150059"
+                  size="lg"
+                  radius="full"
+                  variant="bordered"
+                  startContent={<Phone size={18} />}
+                  className="border-white/12 bg-emerald-500 font-semibold text-white"
+                >
+                  Telefone
+                </Button>
+                <Button
+                  as="a"
                   href="https://www.linkedin.com/in/diogo-maggio-9b8195239/"
                   target="_blank"
                   rel="noreferrer"
@@ -604,7 +628,7 @@ function App() {
                   radius="full"
                   variant="bordered"
                   startContent={<Github size={18} />}
-                  className="border-white/12 bg-white/5 font-semibold text-white"
+                  className="border-white/12 bg-mauve-700 font-semibold text-white"
                 >
                   GitHub
                 </Button>
