@@ -407,7 +407,7 @@ function App() {
                 Projetos em destaque
               </Chip>
               <h2 className="max-w-3xl text-3xl font-bold text-white md:text-5xl">
-                Cases apresentados com uma cara mais forte e pronta para impressionar recrutadores.
+                Prática, determinação e tempo. Com esses elementos, crio projetos que fazem a diferença.
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-8 text-white/65 md:text-lg">
