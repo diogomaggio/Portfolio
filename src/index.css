@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 @plugin "./hero.ts";
 @source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
 
 :root {
-  color-scheme: dark;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
+  color-scheme: light;
+  font-family: "Manrope", system-ui, sans-serif;
+  background: #f5f7f8;
 }
 
 html {
@@ -18,9 +18,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(91, 33, 182, 0.28), transparent 26%),
-    linear-gradient(180deg, #020617 0%, #020617 45%, #0f172a 100%);
-  color: #f8fafc;
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.07), transparent 28%),
+    linear-gradient(180deg, #f8fafb 0%, #f5f7f8 55%, #eef2f3 100%);
+  color: #17202a;
 }
 
 body::-webkit-scrollbar {
@@ -28,12 +28,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.9);
+  background: #e7ecee;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.9), rgba(34, 211, 238, 0.8));
+  background: #0f766e;
 }
 
 #root {
@@ -41,8 +41,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.45);
-  color: #ffffff;
+  background: rgba(15, 118, 110, 0.2);
+  color: #17202a;
 }
 
 .glass-card {
@@ -55,8 +55,8 @@ body::-webkit-scrollbar-thumb {
 
 .skill-shell {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 24px 90px rgba(15, 23, 42, 0.42);
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 24px 90px rgba(31, 48, 56, 0.1);
 }
 
 .skill-orbit {
@@ -84,7 +84,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   border-radius: 1.4rem;
   border-width: 1px;
-  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.3);
+  box-shadow: 0 16px 40px rgba(31, 48, 56, 0.12);
   backdrop-filter: blur(12px);
   transition:
     transform 220ms ease,

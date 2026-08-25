@@ -81,7 +81,7 @@ const projects: Project[] = [
   {
     name: "S.E.E.L.F.",
     description:
-      "Projeto web com interface moderna e foco em uma experiência de navegação clara, responsiva e envolvente.",
+      "Projeto que visa o controle de fluxo de caixa, estoque e gestão financeira de forma eficiente.",
     stack: ["React", "JavaScript", "UI Design"],
     link: "https://s-e-e-l-f.vercel.app/",
   },
@@ -248,13 +248,13 @@ function App() {
   }, [selectedTech]);
 
   return (
-    <div className="relative overflow-hidden bg-slate-950 text-slate-50">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.24),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.16),transparent_28%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[72px_72px] opacity-30" />
+    <div className="relative overflow-hidden bg-zinc-50 text-slate-900">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(15,118,110,0.08),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(71,85,105,0.05),transparent_28%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.025)_1px,transparent_1px)] bg-size-[72px_72px] opacity-50" />
 
       <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 md:px-6">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/10 bg-slate-950/65 px-4 py-3 shadow-[0_0_40px_rgba(15,23,42,0.55)] backdrop-blur-xl md:px-6">
-          <a href="#inicio" className="text-sm font-semibold tracking-[0.22em] text-white/90 uppercase">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-slate-200 bg-white/85 px-4 py-3 shadow-[0_0_40px_rgba(31,48,56,0.12)] backdrop-blur-xl md:px-6">
+          <a href="#inicio" className="text-sm font-semibold tracking-[0.22em] text-slate-800 uppercase">
             Diogo Maggio
           </a>
 
@@ -263,7 +263,7 @@ function App() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-2 text-sm text-white/65 transition hover:bg-white/8 hover:text-white"
+                className="rounded-full px-4 py-2 text-sm text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
               >
                 {item.label}
               </a>
@@ -275,7 +275,7 @@ function App() {
             href="#projetos"
             color="secondary"
             radius="full"
-            className="bg-violet-500/90 font-semibold text-white shadow-lg shadow-violet-500/30"
+            className="bg-teal-700 font-semibold text-white shadow-lg shadow-teal-700/20"
           >
             Ver projetos
           </Button>
@@ -292,10 +292,10 @@ function App() {
             className="space-y-7"
           >
             <div className="space-y-4">
-              <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-slate-900 md:text-6xl">
                 Desenvolvedor de software.
               </h1>
-              <p className="max-w-2xl text-base leading-8 text-white/72 md:text-lg">
+              <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
                 Sou Diogo Maggio de Azevedo, desenvolvedor full-stack em formação, com foco em
                 experiências web elegantes, navegação fluida e interfaces que valorizam tanto o
                 visual quanto a clareza do produto.
@@ -312,7 +312,7 @@ function App() {
                 radius="full"
                 color="secondary"
                 endContent={<LinkedinIcon size={18} />}
-                className="bg-violet-500 font-semibold text-white shadow-lg shadow-violet-500/30"
+                className="bg-teal-700 font-semibold text-white shadow-lg shadow-teal-700/20"
               >
                 LinkedIn
               </Button>
@@ -325,7 +325,7 @@ function App() {
                 radius="full"
                 variant="bordered"
                 startContent={<Github size={18} />}
-                className="border-white/15 bg-white/5 font-semibold text-white"
+                className="border-slate-300 bg-white font-semibold text-slate-800"
               >
                 GitHub
               </Button>
@@ -345,9 +345,9 @@ function App() {
           className="grid scroll-mt-28 items-center gap-8 lg:grid-cols-[0.88fr_1.12fr]"
         >
           <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute inset-0 rounded-4xl bg-cyan-400/14 blur-3xl" />
-            <div className="floating-photo relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-4 shadow-[0_25px_70px_rgba(0,0,0,0.35)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.18),transparent_38%),radial-gradient(circle_at_bottom,rgba(168,85,247,0.16),transparent_35%)]" />
+            <div className="absolute inset-0 rounded-4xl bg-teal-700/10 blur-3xl" />
+            <div className="floating-photo relative overflow-hidden rounded-4xl border border-slate-200 bg-white p-4 shadow-[0_25px_70px_rgba(31,48,56,0.14)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(15,118,110,0.1),transparent_38%),radial-gradient(circle_at_bottom,rgba(71,85,105,0.08),transparent_35%)]" />
               <img
                 src={photo}
                 alt="Diogo Maggio"
@@ -357,21 +357,21 @@ function App() {
           </div>
 
           <div className="space-y-6">
-            <Chip className="border border-cyan-400/20 bg-cyan-500/10 text-cyan-200" radius="full">
+            <Chip className="border border-teal-700/20 bg-teal-700/10 text-teal-800" radius="full">
               Sobre mim
             </Chip>
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-white md:text-5xl">
+              <h2 className="text-3xl font-bold text-slate-900 md:text-5xl">
                 Um perfil técnico com boa comunicação visual e vontade real de evoluir.
               </h2>
-              <p className="max-w-3xl text-base leading-8 text-white/72 md:text-lg">
+              <p className="max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
                 Sou um universitário que já participou de projetos acadêmicos e extracurriculares,
                 com experiência profissional anterior em rotina administrativa e boa familiaridade com
                 organização, ferramentas digitais e responsabilidade no dia a dia. Hoje meu foco está
                 em desenvolvimento web, criando interfaces com JavaScript, React, HTML e CSS, sem
                 perder de vista a visão full-stack com Python, PHP e C#.
               </p>
-              <p className="max-w-3xl text-base leading-8 text-white/65 md:text-lg">
+              <p className="max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
                 Também tenho contato com SQL, pacote Office, plataformas no-code e ecossistemas mais
                 modernos como Next.js e Vite. Meu objetivo é transformar repertório técnico em
                 experiências visuais fortes, profissionais e úteis para quem usa o produto.
@@ -390,13 +390,13 @@ function App() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ delay: index * 0.08, duration: 0.4 }}
                   >
-                    <Card className="glass-card h-full border border-white/10 bg-white/5">
+                    <Card className="glass-card h-full border border-slate-200 bg-white">
                       <CardBody className="gap-3 p-5">
-                        <div className="flex size-11 items-center justify-center rounded-2xl bg-cyan-500/12 text-cyan-200">
+                        <div className="flex size-11 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-700">
                           <Icon size={20} />
                         </div>
-                        <h3 className="text-lg font-semibold text-white">{area.title}</h3>
-                        <p className="text-sm leading-7 text-white/65">{area.text}</p>
+                        <h3 className="text-lg font-semibold text-slate-900">{area.title}</h3>
+                        <p className="text-sm leading-7 text-slate-600">{area.text}</p>
                       </CardBody>
                     </Card>
                   </motion.div>
@@ -417,14 +417,14 @@ function App() {
         >
           <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
             <div className="space-y-4">
-              <Chip className="border border-violet-400/20 bg-violet-500/10 text-violet-200" radius="full">
+              <Chip className="border border-teal-700/20 bg-teal-700/10 text-teal-800" radius="full">
                 Projetos em destaque
               </Chip>
-              <h2 className="max-w-3xl text-3xl font-bold text-white md:text-5xl">
+              <h2 className="max-w-3xl text-3xl font-bold text-slate-900 md:text-5xl">
                 Prática, determinação e tempo. Com esses elementos, crio projetos que fazem a diferença.
               </h2>
             </div>
-            <p className="max-w-2xl text-base leading-8 text-white/65 md:text-lg">
+            <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
               Alguns projetos os quais já dediquei algum tempo, consolidando e melhorando cada vez mais minhas habilidades e conhecimentos.
             </p>
           </div>
@@ -438,14 +438,14 @@ function App() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: index * 0.08, duration: 0.45 }}
               >
-                <Card className="glass-card group h-full border border-white/10 bg-white/5 transition-transform duration-300 hover:-translate-y-1">
+                <Card className="glass-card group h-full border border-slate-200 bg-white transition-transform duration-300 hover:-translate-y-1">
                   <CardBody className="flex h-full flex-col gap-5 p-6">
                     <div className="space-y-3">
-                      <div className="inline-flex rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs uppercase tracking-[0.28em] text-white/45">
+                      <div className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs uppercase tracking-[0.28em] text-slate-500">
                         Projeto {index + 1}
                       </div>
-                      <h3 className="text-2xl font-semibold text-white">{project.name}</h3>
-                      <p className="text-sm leading-7 text-white/65">{project.description}</p>
+                      <h3 className="text-2xl font-semibold text-slate-900">{project.name}</h3>
+                      <p className="text-sm leading-7 text-slate-600">{project.description}</p>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
@@ -454,7 +454,7 @@ function App() {
                           key={`${project.name}-${item}`}
                           variant="flat"
                           radius="full"
-                          className="border border-white/10 bg-black/20 text-white/75"
+                          className="border border-slate-200 bg-slate-50 text-slate-600"
                         >
                           {item}
                         </Chip>
@@ -470,7 +470,7 @@ function App() {
                         radius="full"
                         color="secondary"
                         endContent={<ArrowUpRight size={16} />}
-                        className="bg-violet-500 font-semibold text-white"
+                        className="bg-teal-700 font-semibold text-white"
                       >
                         Acessar projeto
                       </Button>
@@ -482,7 +482,7 @@ function App() {
                         radius="full"
                         variant="bordered"
                         startContent={<Github size={16} />}
-                        className="border-white/10 bg-white/5 font-semibold text-white"
+                        className="border-slate-300 bg-white font-semibold text-slate-800"
                       >
                         Ver código
                       </Button>
@@ -504,20 +504,20 @@ function App() {
           className="grid scroll-mt-28 gap-8 xl:grid-cols-[1.08fr_0.92fr]"
         >
           <div className="space-y-5">
-            <Chip className="border border-fuchsia-400/20 bg-fuchsia-500/10 text-fuchsia-200" radius="full">
+            <Chip className="border border-teal-700/20 bg-teal-700/10 text-teal-800" radius="full">
               Habilidades & stack
             </Chip>
-            <h2 className="max-w-3xl text-3xl font-bold text-white md:text-5xl">
+            <h2 className="max-w-3xl text-3xl font-bold text-slate-900 md:text-5xl">
               Tecnologias variadas as quais possuo conhecimento/experiência
             </h2>
-            <p className="max-w-3xl text-base leading-8 text-white/67 md:text-lg">
+            <p className="max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
               Quando se trata de linguagens, acredito que mesmo sem um profundo conhecimento, quando se entende a lógica por trás delas, é possível aprender rapidamente e se adaptar a novas experiências.
             </p>
 
-            <div className="skill-shell relative flex min-h-144 items-center justify-center overflow-hidden rounded-4xl border border-white/10 bg-white/5 p-6">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(168,85,247,0.14),transparent_42%)]" />
-              <div className="pointer-events-none absolute inset-[14%] rounded-full border border-dashed border-white/10" />
-              <div className="pointer-events-none absolute inset-[26%] rounded-full border border-white/10" />
+            <div className="skill-shell relative flex min-h-144 items-center justify-center overflow-hidden rounded-4xl border border-slate-200 bg-white p-6">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(15,118,110,0.08),transparent_42%)]" />
+              <div className="pointer-events-none absolute inset-[14%] rounded-full border border-dashed border-slate-200" />
+              <div className="pointer-events-none absolute inset-[26%] rounded-full border border-slate-200" />
 
               <div className="skill-orbit absolute inset-0">
                 {technologies.map((technology, index) => {
@@ -535,8 +535,8 @@ function App() {
                         onClick={() => setSelectedTech(technology)}
                         className={`skill-node-button ${
                           isActive
-                            ? "border-violet-300/50 bg-violet-500/30 shadow-[0_0_30px_rgba(168,85,247,0.4)]"
-                            : "border-white/10 bg-slate-950/65 hover:border-white/20 hover:bg-white/8"
+                            ? "border-teal-600/50 bg-teal-50 shadow-[0_0_30px_rgba(15,118,110,0.18)]"
+                            : "border-slate-200 bg-white hover:border-teal-600/40 hover:bg-teal-50"
                         }`}
                         aria-pressed={isActive}
                         aria-label={`Selecionar ${technology.name}`}
@@ -555,19 +555,19 @@ function App() {
                   initial={{ opacity: 0, scale: 0.95, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.28 }}
-                  className="relative z-10 max-w-sm rounded-4xl border border-white/10 bg-slate-950/80 p-6 text-center shadow-[0_20px_60px_rgba(2,6,23,0.45)] backdrop-blur-xl"
+                  className="relative z-10 max-w-sm rounded-4xl border border-slate-200 bg-white/95 p-6 text-center shadow-[0_20px_60px_rgba(31,48,56,0.16)] backdrop-blur-xl"
                 >
-                  <div className="mx-auto flex size-16 items-center justify-center rounded-2xl border border-white/10 bg-white/7">
+                  <div className="mx-auto flex size-16 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50">
                     <img src={selectedTech.icon} alt={selectedTech.name} className="h-10 w-10 object-contain" />
                   </div>
                   <div className="mt-4 space-y-3">
-                    <p className="text-xs uppercase tracking-[0.28em] text-white/40">
+                    <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
                       tecnologia {selectedIndex + 1}
                     </p>
-                    <h3 className="text-3xl font-bold text-white">{selectedTech.name}</h3>
-                    <p className="text-base font-medium text-violet-200">{selectedTech.summary}</p>
-                    <p className="text-sm leading-7 text-white/65">{selectedTech.details}</p>
-                    <Chip className="border border-violet-400/20 bg-violet-500/10 text-violet-100" radius="full">
+                    <h3 className="text-3xl font-bold text-slate-900">{selectedTech.name}</h3>
+                    <p className="text-base font-medium text-teal-700">{selectedTech.summary}</p>
+                    <p className="text-sm leading-7 text-slate-600">{selectedTech.details}</p>
+                    <Chip className="border border-teal-700/20 bg-teal-700/10 text-teal-800" radius="full">
                       foco: {selectedTech.focus}
                     </Chip>
                   </div>
@@ -588,14 +588,14 @@ function App() {
                   viewport={{ once: true, amount: 0.1 }}
                   transition={{ delay: index * 0.06, duration: 0.38 }}
                 >
-                  <Card className="glass-card border border-white/10 bg-white/5">
+                  <Card className="glass-card border border-slate-200 bg-white">
                     <CardBody className="flex flex-row gap-4 p-5">
-                      <div className="mt-1 flex size-12 shrink-0 items-center justify-center rounded-2xl bg-fuchsia-500/12 text-fuchsia-200">
+                      <div className="mt-1 flex size-12 shrink-0 items-center justify-center rounded-2xl bg-teal-700/10 text-teal-700">
                         <Icon size={20} />
                       </div>
                       <div className="space-y-2">
-                        <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                        <p className="text-sm leading-7 text-white/65">{item.text}</p>
+                        <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                        <p className="text-sm leading-7 text-slate-600">{item.text}</p>
                       </div>
                     </CardBody>
                   </Card>
@@ -614,17 +614,17 @@ function App() {
           transition={{ duration: 0.55 }}
           className="scroll-mt-28"
         >
-          <Card className="glass-card overflow-hidden border border-white/10 bg-white/5">
+          <Card className="glass-card overflow-hidden border border-slate-200 bg-white">
             <CardBody className="relative gap-6 overflow-hidden px-6 py-8 md:px-8 md:py-10 lg:flex lg:flex-row lg:items-center lg:justify-between">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(34,211,238,0.14),transparent_30%),radial-gradient(circle_at_right,rgba(168,85,247,0.16),transparent_34%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(15,118,110,0.08),transparent_30%),radial-gradient(circle_at_right,rgba(71,85,105,0.06),transparent_34%)]" />
               <div className="relative z-10 max-w-2xl space-y-4">
-                <Chip className="border border-white/12 bg-white/8 text-white/75" radius="full">
+                <Chip className="border border-teal-700/20 bg-teal-700/10 text-teal-800" radius="full">
                   Vamos conversar
                 </Chip>
-                <h2 className="text-3xl font-bold text-white md:text-4xl">
+                <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
                   Se você curtiu o portfólio, entre em contato, vamos trabalhar juntos!
                 </h2>
-                <p className="text-base leading-8 text-white/65 md:text-lg">
+                <p className="text-base leading-8 text-slate-600 md:text-lg">
                   Estou ansioso para colaborar em projetos incríveis e criar soluções inovadoras juntos, vamos fazer acontecer.
                 </p>
               </div>
@@ -637,7 +637,7 @@ function App() {
                   radius="full"
                   color="secondary"
                   startContent={<Mail size={18} />}
-                  className="bg-cyan-500 font-semibold text-slate-950"
+                  className="bg-teal-700 font-semibold text-white"
                 >
                   E-mail
                 </Button>
@@ -648,7 +648,7 @@ function App() {
                   radius="full"
                   variant="bordered"
                   startContent={<Phone size={18} />}
-                  className="border-white/12 bg-emerald-500 font-semibold text-white"
+                  className="border-slate-300 bg-white font-semibold text-slate-800"
                 >
                   Telefone
                 </Button>
@@ -661,7 +661,7 @@ function App() {
                   radius="full"
                   color="secondary"
                   startContent={<LinkedinIcon size={18} />}
-                  className="bg-violet-500 font-semibold text-white"
+                  className="bg-slate-800 font-semibold text-white"
                 >
                   LinkedIn
                 </Button>
@@ -674,7 +674,7 @@ function App() {
                   radius="full"
                   variant="bordered"
                   startContent={<Github size={18} />}
-                  className="border-white/12 bg-mauve-700 font-semibold text-white"
+                  className="border-slate-300 bg-white font-semibold text-slate-800"
                 >
                   GitHub
                 </Button>
