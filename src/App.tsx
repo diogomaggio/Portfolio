@@ -60,7 +60,7 @@ const projects: Project[] = [
   {
     name: "Calculadora Simples",
     description:
-      "Projeto enxuto para reforçar lógica, componentização visual e microinterações em uma interface objetiva.",
+      "Calculadora avançada com histórico de operações, interface responsiva, animações fluidas e design moderno. Implementada com vanilla JavaScript e CSS avançado para demonstrar habilidades de frontend moderno e atenção aos detalhes de UX.",
     stack: ["HTML5", "CSS", "JavaScript"],
     link: "https://calculadora-simples-ashy-rho.vercel.app",
   },
@@ -70,6 +70,20 @@ const projects: Project[] = [
       "Aplicação de gestão financeira com organização de dados, visão prática e base para escalar funcionalidades.",
     stack: ["React", "JavaScript", "UI Design"],
     link: "https://controle-financeiro-lime.vercel.app",
+  },
+  {
+    name: "Luna Cosméticos e Perfumaria",
+    description:
+      "E-commerce de cosméticos e perfumaria com catálogo de produtos, identidade visual elegante e experiência de navegação voltada para compras online.",
+    stack: ["React", "JavaScript", "E-commerce"],
+    link: "https://luna-cosmeticos-e-perfumaria.vercel.app/",
+  },
+  {
+    name: "S.E.E.L.F.",
+    description:
+      "Projeto web com interface moderna e foco em uma experiência de navegação clara, responsiva e envolvente.",
+    stack: ["React", "JavaScript", "UI Design"],
+    link: "https://s-e-e-l-f.vercel.app/",
   },
 ];
 
